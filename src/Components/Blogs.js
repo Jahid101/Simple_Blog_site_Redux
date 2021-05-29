@@ -13,7 +13,18 @@ const Blogs = () => {
 
   const [loading, setLoading] = useState(true);
 
-  
+  useEffect(() => {
+    axios
+      .get(blog_url)
+      .then((response) => {
+        dispatch(setBlogData(response.data));
+        setBlogs(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [searchInput]);
 
   return (
     <div className="blog__page">
