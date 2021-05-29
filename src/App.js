@@ -21,4 +21,3 @@ const App = () => {
 
 export default App;
 
-// OAuth Client id 837352898406-p6q5munafisueurjdv4uh2hen1o1b813.apps.googleusercontent.com
