@@ -13,8 +13,24 @@ import {
 import "../styling/navbar.css";
 
 const Navbar = () => {
+  const [inputValue, setInputValue] = useState("tech");
+  const isSignedIn = useSelector(selectSignedIn);
+  const userData = useSelector(selectUserData);
+
+  const dispatch = useDispatch();
+
+  const logout = (response) => {
+    dispatch(setSignedIn(false));
+    dispatch(setUserData(null));
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(setInput(inputValue));
+  };
+
+
+  
   return (
     <div className="navbar">
       <h1 className="navbar__header">BlogMania 💬</h1>
