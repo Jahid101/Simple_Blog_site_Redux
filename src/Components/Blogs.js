@@ -34,7 +34,17 @@ const Blogs = () => {
             {loading ? <h1 className="loading">Loading...</h1> : ""}
             <div className="blogs">
                 {blogs?.articles?.map((blog) => (
-                    
+                    <a className="blog" target="_blank" href={blog.url}>
+                        <img src={blog.image} />
+                        <div>
+                            <h3 className="sourceName">
+                                <span>{blog.source.name}</span>
+                                <p>{blog.publishedAt}</p>
+                            </h3>
+                            <h1>{blog.title}</h1>
+                            <p>{blog.description}</p>
+                        </div>
+                    </a>
                 ))}
 
                 {blogs?.totalArticles == 0 && (
