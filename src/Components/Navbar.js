@@ -50,11 +50,7 @@ const Navbar = () => {
 
       {isSignedIn ? (
         <div className="navbar__user__data">
-          <Avatar
-            className="user"
-            src={userData?.imageUrl}
-            alt={userData?.name}
-          />
+          
           <h1 className="signedIn">{userData?.givenName}</h1>
           <GoogleLogout
             clientId="57529085775-fk8rn8hren1q8o5ja2idq4m7hug5aong.apps.googleusercontent.com"
