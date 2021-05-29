@@ -10,10 +10,17 @@ import {
 import "../styling/home.css";
 
 const Homepage = () => {
+  const isSignedIn = useSelector(selectSignedIn);
+
+  const dispatch = useDispatch();
+  const login = (response) => {
+    console.log(response);
+    dispatch(setSignedIn(true));
+    dispatch(setUserData(response.profileObj));
   };
 
 
-
+  
   return (
     <div className="home__page" style={{ display: isSignedIn ? "none" : "" }}>
       {!isSignedIn ? (
