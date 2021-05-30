@@ -28,7 +28,6 @@ const Blogs = () => {
 
   return (
     <div className='blog__page'>
-      <h1 className='blog__page__header'>Blogs</h1>
       {loading ? (
         <center>
           <Spinner />
@@ -36,19 +35,21 @@ const Blogs = () => {
       ) : (
         ''
       )}
-      <div className='blogs d-flex flex-wrap'>
+      <div className='blogs d-flex flex-wrap justify-content-center'>
         {blogs?.articles?.map((blog) => (
-          <a className='blog col-md-4' target='_blank' rel='noreferrer' href={blog.url}>
-            <img src={blog.image} alt='...' />
-            <div>
-              <h3 className='sourceName'>
-                <span>{blog.source.name}</span>
-                <p>{blog.publishedAt}</p>
-              </h3>
-              <h1>{blog.title}</h1>
-              <p>{blog.description}</p>
-            </div>
-          </a>
+          <div className='card m-3' style={{ width: '20rem' }}>
+            <a className='blog' target='_blank' rel='noreferrer' href={blog.url}>
+              <img height='150px' className='card-img-top' src={blog.image} alt='...' />
+              <div className='card-body '>
+                <small className='sourceName'>
+                  <span>{blog.source.name}</span>
+                  <p>{blog.publishedAt}</p>
+                </small>
+                <h1>{blog.title}</h1>
+                <p>{blog.description}</p>
+              </div>
+            </a>
+          </div>
         ))}
 
         {blogs?.totalArticles === 0 && (

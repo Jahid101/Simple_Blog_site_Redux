@@ -1,4 +1,9 @@
-.blog__page {
+.blogs a {
+  color: black;
+  text-decoration: none;
+}
+
+/* .blog__page {
   padding: 30px 170px;
 }
 
@@ -75,4 +80,4 @@
   font-size: 25px;
   font-weight: 500;
   line-height: 1.5em;
-}
+} */
