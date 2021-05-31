@@ -1,6 +1,6 @@
 # BlogMania
 
-[Live Link](https://redux-blog-site.netlify.app).
+[Live Link](https://redux-blog-site.netlify.app)
 
 ## Tech Used
 
